@@ -4,7 +4,7 @@ import requests
 app = Flask(__name__)
 
 # Remplacez par votre clé d'API Perspective
-PERSPECTIVE_API_KEY = 'YOUR_API_KEY'
+PERSPECTIVE_API_KEY = 'AIzaSyAmRU7uVucRsa0qucytOtHNTyyYDDLkjaM'
 
 @app.route('/analyze', methods=['POST'])
 def analyze_comment():
