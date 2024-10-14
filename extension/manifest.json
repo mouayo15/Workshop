@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "Comment Filter",
+  "version": "1.0",
+  "permissions": ["activeTab", "webRequest", "webRequestBlocking", "https://*/*"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [{
+    "matches": ["*://*.facebook.com/*", "*://*.instagram.com/*", "*://*.linkedin.com/*"],
+    "js": ["content.js"]
+  }]
+}
