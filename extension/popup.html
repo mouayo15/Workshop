@@ -3,12 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comment Retriever</title>
-    <script src="popup.js" defer></script>
+    <title>Toxicity Analyzer</title>
+    <style>
+        body{
+            width: 500px;
+        }
+        #comments-container {
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .comment {
+            margin-bottom: 10px;
+        }
+
+        .progress {
+            width: 100%;
+            background-color: #f3f3f3;
+            border-radius: 5px;
+            overflow: hidden;
+            height: 20px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0;
+            background-color: #4caf50; /* Green color for low toxicity */
+            transition: width 0.5s;
+        }
+    </style>
 </head>
 <body>
-    <h1>Comment Retriever</h1>
     <button id="retrieveComments">Retrieve Comments</button>
-    <pre id="comments"></pre>
+    <div id="comments-container"></div>
+
+    <script src="popup.js"></script>
 </body>
 </html>
