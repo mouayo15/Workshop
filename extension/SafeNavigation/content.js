@@ -1,8 +1,8 @@
-// Récupérer les mots censurés depuis le stockage
-chrome.storage.sync.get("forbiddenWords", function(data) {
-    const forbiddenWords = data.forbiddenWords || [];
+// Send a message to background.js to fetch forbidden words
+chrome.runtime.sendMessage({ action: "fetchWords" }, function(response) {
+    const forbiddenWords = response.forbiddenWords || [];
 
-    // Fonction pour remplacer les mots
+    // Function to replace words
     function censorText(text) {
         forbiddenWords.forEach(word => {
             const regex = new RegExp(`\\b${word}\\b`, 'gi');
@@ -11,7 +11,7 @@ chrome.storage.sync.get("forbiddenWords", function(data) {
         return text;
     }
 
-    // Parcourir et censurer tous les éléments textuels de la page
+    // Function to censor the page
     function censorPage() {
         const elements = document.querySelectorAll('body, body *');
         elements.forEach(el => {
@@ -21,26 +21,25 @@ chrome.storage.sync.get("forbiddenWords", function(data) {
         });
     }
 
-    // Exécuter le filtrage sur la page courante
+    // Run censoring on the current page
     censorPage();
 
-    // Observer les mutations du DOM pour censurer les nouveaux éléments
+    // Observe the DOM for mutations and reapply censoring
     const observer = new MutationObserver(() => {
         censorPage();
     });
 
-    // Configuration de l'observateur
     observer.observe(document.body, { childList: true, subtree: true });
 
-    // Écouter les messages du popup
+    // Listen for messages to reapply censoring
     chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         if (request.action === "censor") {
-            censorPage(); // Censurer immédiatement lorsque le message est reçu
+            censorPage();
         }
     });
 
-    // Écouter les événements de redimensionnement de la fenêtre
+    // Reapply censoring when the window is resized
     window.addEventListener('resize', () => {
-        censorPage(); // Censurer à nouveau lors du redimensionnement
+        censorPage();
     });
 });
