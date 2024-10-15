@@ -17,6 +17,9 @@
                     tagline: "Modern and Safe Social Networks",
                     downloadBtn: "Télécharger l'extension",
                     whyChoose: "Pourquoi choisir SocialGuard ?",
+					navFeatures: "Fonctionnalités",
+					navWhyChoose: "Pourquoi SocialGuard ?",
+					navDownload: "Téléchargement",
                     description: "SocialGuard est l'outil parfait pour garder vos réseaux sociaux sains et sécurisés. Grâce à notre extension, vous pouvez :",
                     feature1: "Filtrer les commentaires inappropriés en temps réel",
                     feature2: "Améliorer votre tranquillité d'esprit en ligne",
@@ -38,6 +41,9 @@
                     tagline: "Modern and Safe Social Networks",
                     downloadBtn: "Download the extension",
                     whyChoose: "Why choose SocialGuard?",
+			        navFeatures: "Features",
+					navWhyChoose: "Why SocialGuard?",
+					navDownload: "Download",
                     description: "SocialGuard is the perfect tool to keep your social networks healthy and safe. With our extension, you can:",
                     feature1: "Filter inappropriate comments in real-time",
                     feature2: "Improve your peace of mind online",
@@ -58,6 +64,9 @@
             document.getElementById('title').textContent = texts[lang].title;
             document.getElementById('tagline').textContent = texts[lang].tagline;
             document.getElementById('downloadBtn').textContent = texts[lang].downloadBtn;
+			document.getElementById('navFeatures').textContent = texts[lang].navFeatures;
+			document.getElementById('navWhyChoose').textContent = texts[lang].navWhyChoose;
+			document.getElementById('navDownload').textContent = texts[lang].navDownload;
             document.getElementById('whyChoose').textContent = texts[lang].whyChoose;
             document.getElementById('description').textContent = texts[lang].description;
             document.getElementById('feature1').textContent = texts[lang].feature1;
@@ -84,11 +93,11 @@
                 <a href="#" class="logo">
                     <img src="img/SocialGuard_logo.png" alt="Logo SocialGuard">
                 </a>
-                <ul class="nav-links">
-                    <li><a href="#features">Fonctionnalités</a></li>
-                    <li><a href="#why-choose">Pourquoi SocialGuard ?</a></li>
-                    <li><a href="#download">Téléchargement</a></li>
-                </ul>
+				<ul class="nav-links">
+					<li><a id="navFeatures" href="#features">Fonctionnalités</a></li>
+					<li><a id="navWhyChoose" href="#why-choose">Pourquoi SocialGuard ?</a></li>
+					<li><a id="navDownload" href="#download">Téléchargement</a></li>
+				</ul>
                 <select onchange="changeLanguage(this.value)" class="language-select">
                     <option value="fr">Français</option>
                     <option value="en">English</option>
