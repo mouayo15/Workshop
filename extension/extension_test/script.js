@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const addWordButton = document.getElementById("add-word-button");
     const removeWordButton = document.getElementById("remove-word-button");
     const wordListElement = document.getElementById("word-list");
+    const passwordInput = document.getElementById("password"); // Password input field
+    const unlockButton = document.getElementById("unlock-button"); // Unlock button
+    const correctPassword = "admin"; // Replace with your desired password
 
     // Charger la liste de mots à partir du stockage local
     chrome.storage.local.get(["words"], function(result) {
@@ -11,20 +14,34 @@ document.addEventListener("DOMContentLoaded", function() {
         updateWordList(words);
     });
 
-    // Ajouter un mot
+    // Déverrouiller la gestion des mots
+    unlockButton.addEventListener("click", function() {
+        const passwordValue = passwordInput.value.trim();
+        if (passwordValue === correctPassword) {
+            document.getElementById("word-management").style.display = "block"; // Show word management section
+            alert("Accès autorisé!"); // Access granted message
+        } else {
+            alert("Mot de passe incorrect!"); // Incorrect password message
+        }
+    });
+
+    // Ajouter des mots
     addWordButton.addEventListener("click", function() {
-        const newWord = wordInput.value.trim();
-        if (newWord) {
+        const newWords = wordInput.value.trim();
+        if (newWords) {
+            const wordsToAdd = newWords.split(/\s+/); // Séparer les mots par espaces
             chrome.storage.local.get(["words"], function(result) {
                 const words = result.words || [];
-                if (!words.includes(newWord)) {
-                    words.push(newWord);
+                let uniqueWords = wordsToAdd.filter(word => !words.includes(word)); // Garder seulement les mots uniques
+
+                if (uniqueWords.length > 0) {
+                    words.push(...uniqueWords); // Ajouter les mots uniques
                     chrome.storage.local.set({ words: words }, function() {
                         updateWordList(words);
-                        wordInput.value = "";  // Clear input field
+                        wordInput.value = ""; // Clear input field
                     });
                 } else {
-                    alert("Word already exists in the list.");
+                    alert("Tous les mots existent déjà dans la liste."); // All words already exist
                 }
             });
         }
@@ -39,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 words = words.filter(word => word !== wordToRemove);
                 chrome.storage.local.set({ words: words }, function() {
                     updateWordList(words);
-                    wordInput.value = "";  // Clear input field
+                    wordInput.value = ""; // Clear input field
                 });
             });
         }

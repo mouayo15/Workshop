@@ -1,3 +1,4 @@
+
 // Fonction pour remplacer les mots
 function censorText(text, callback) {
     // Retrieve the forbidden words list from chrome storage
@@ -23,6 +24,7 @@ function censorPage() {
             // Pass the current element's text content to the censorText function
             censorText(el.textContent, function(censoredText) {
                 el.textContent = censoredText;  // Update the element's text content with the censored text
+
             });
         }
     });
