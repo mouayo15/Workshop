@@ -1,0 +1,29 @@
+
+<script type="application/json"  data-content-len="254" data-sjs>
+{"require":[["qplTimingsServerJS",null,null,["7425632129623123555","adp_PolarisPostCommentsContainerQueryRelayPreloader_{N}"]],
+["qplTimingsServerJS",null,null,["7425632129623123555-server","adp_PolarisPostCommentsContainerQueryRelayPreloader_{N}",788]]]}
+
+</script>
+
+
+
+<script type="application/json"  data-content-len="14151" data-sjs>
+{"require":[["ScheduledServerJS","handle",null,[{"__bbox":{"require":[["RelayPrefetchedStreamCache","next",[],
+
+
+["adp_PolarisPostCommentsContainerQueryRelayPreloader_670d2514977239d94360590",
+{"__bbox":
+
+{"complete":true,"result":{"data":{"xdt_api__v1__media__media_id__comments__connection":{"edges":[{"node":{"pk":"18040070501138888","user":
+
+{"is_verified":false,"id":"54899837900","pk":"54899837900","is_unpublished":null,"profile_pic_url":
+"https:\/\/scontent.cdninstagram.com\/v\/t51.2885-19\/306584416_675194246790850_3892865593556947974_n.jpg?stp=dst-jpg_s150x150&_nc_
+ht=scontent.cdninstagram.com&_nc_cat=1&_nc_ohc=O1uS6YqOvCoQ7kNvgHBinws&_nc_gid=d097000c39fd4e4ba4f065eaa269b122&edm=APs17CUBAAAA&ccb=7-5&oh=
+00_AYBdv44C3xEsrvDeOSwQkEZtN1ET5ycaoCosqn1fjJ-WCQ&oe=6713139C&_nc_sid=10d13b","username":"poet.circle","fbid_v2":"17841454897022479"},
+"is_covered":false,"child_comment_count":0,"restricted_status":null,"has_translation":null,"has_liked_comment":false,"text":
+"\u2764\ufe0f\ud83d\ude4c\ud83d\udd25\ud83d\udc4f","giphy_media_info":null,"created_at":1728911960,"parent_comment_id":null,
+"comment_like_count":1,"__typename":"XDTCommentDict"},"cursor":""},{"node":{"pk":"18019818500290301","user":
+{"is_verified":false,"id":"54899837900","pk":"54899837900","is_unpublished":null,"profile_pic_url":
+"https:\/\/scontent.cdninstagram.com\/v\/t51.2885-19\/306584416_675194246790850_3892865593556947974_n.jpg?
+stp=dst-jpg_s150x150&_nc_ht=scontent.cdninstagram.com&_nc_cat=1&_nc_ohc=O1uS6YqOvCoQ7kNvgHBinws&_nc_gid=d097000c39fd4e4ba4f065eaa269b122&edm=APs17CUBAAAA&ccb=7-5&oh=00_AYBdv44C3xEsrvDeOSwQkEZtN1ET5ycaoCosqn1fjJ-WCQ&oe=6713139C&_nc_sid=10d13b","username":"poet.circle","fbid_v2":"17841454897022479"},"is_covered":false,"child_comment_count":0,"restricted_status":null,"has_translation":null,"has_liked_comment":false,"text":"\u2764\ufe0f\ud83d\ude4c","giphy_media_info":null,"created_at":1728911957,"parent_comment_id":null,"comment_like_count":1,"__typename":"XDTCommentDict"},"cursor":""},{"node":{"pk":"18054507535859049","user":{"is_verified":false,"id":"261981389","pk":"261981389","is_unpublished":null,"profile_pic_url":"https:\/\/scontent.cdninstagram.com\/v\/t51.2885-19\/414730194_1335368910491292_3081894355173888935_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent.cdninstagram.com&_nc_cat=100&_nc_ohc=l2q-OgDm9m4Q7kNvgG7S-F0&_nc_gid=d097000c39fd4e4ba4f065eaa269b122&edm=APs17CUBAAAA&ccb=7-5&oh=00_AYCAeJKOPaxwwDym2ExLZYKb--fejzvwEIrcf1oEhAI5tw&oe=6712F93D&_nc_sid=10d13b","username":"nevena_nea","fbid_v2":"17841400881674093"},"is_covered":false,"child_comment_count":0,"restricted_status":null,"has_translation":true,"has_liked_comment":false,"text":"yeah one should never get up so strangers could hear his story. He is getting up for himself not the crowd.","giphy_media_info":null,"created_at":1728912297,"parent_comment_id":null,"comment_like_count":1,"__typename":"XDTCommentDict"},"cursor":""},{"node":{"pk":"18013384331341495","user":{"is_verified":false,"id":"49217203258","pk":"49217203258","is_unpublished":null,"profile_pic_url":"https:\/\/scontent.cdninstagram.com\/v\/t51.2885-19\/459563185_1239833253867535_7513781135948801461_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent.cdninstagram.com&_nc_cat=107&_nc_ohc=snkwu7HRfhsQ7kNvgHIurAv&_nc_gid=d097000c39fd4e4ba4f065eaa269b122&edm=APs17CUBAAAA&ccb=7-5&oh=00_AYD4n_GW-wLfsaT-CVrp1h7psazhhzt3JopKuhDHLiDcIQ&oe=6712DD00&_nc_sid=10d13b","username":"salarvosky","fbid_v2":"17841449297742150"},"is_covered":false,"child_comment_count":0,"restricted_status":null,"has_translation":true,"has_liked_comment":false,"text":
+"Man is not made for death. A man can be destroyed but never defeated. 

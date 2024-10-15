@@ -20,6 +20,3 @@ document.querySelectorAll('.comment').forEach(commentElement => {
     });
 });
 
-
-// Exécuter la fonction après le chargement de la page
-document.addEventListener('DOMContentLoaded', filterComments);
