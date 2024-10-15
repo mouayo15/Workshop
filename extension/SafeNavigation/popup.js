@@ -1,3 +1,5 @@
+const inline = 1;
+
 document.addEventListener('DOMContentLoaded', function () {
     const wordListElement = document.getElementById('wordList');
     const newWordInput = document.getElementById('newWord');

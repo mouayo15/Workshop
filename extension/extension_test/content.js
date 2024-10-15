@@ -1,5 +1,5 @@
 // Liste de mots interdits
-const forbiddenWords = ["ماشالا","algérien",""];
+const forbiddenWords = ["ماشالا", "algérien", "He got some Beard things are changing"];
 
 // Fonction pour remplacer les mots
 function censorText(text) {
@@ -10,7 +10,7 @@ function censorText(text) {
     return text;
 }
 
-// Parcourir et censurer tous les éléments textuels de la page
+// Fonction pour censurer les éléments textuels
 function censorPage() {
     const elements = document.querySelectorAll('body, body *');
     elements.forEach(el => {
@@ -22,3 +22,14 @@ function censorPage() {
 
 // Exécuter le filtrage sur la page courante
 censorPage();
+
+// Observer les changements dans le DOM
+const observer = new MutationObserver(() => {
+    censorPage();
+});
+
+// Observer les changements dans le body
+observer.observe(document.body, {
+    childList: true,
+    subtree: true
+});
