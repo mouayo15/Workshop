@@ -57,17 +57,28 @@ nav .nav-links a:hover {
     color: #007bff;
 }
 
+/* Style pour le sélecteur de langue */
+.language-select {
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: white;
+    color: #007bff;
+    cursor: pointer;
+}
+
 /* Section héro */
 .hero-section {
     background-color: #007bff;
     color: white;
-    padding: 150px 0 100px 0; /* Augmentation du padding pour ajuster la hauteur */
+    padding: 150px 0 100px 0;
     text-align: center;
-    margin-top: 80px; /* Ajout d'un margin-top pour compenser la position fixe du header */
+    margin-top: 80px;
 }
 
 .hero-section h1 {
-    font-size: 48px; /* Taille réduite pour plus d'équilibre */
+    font-size: 48px;
     margin-bottom: 20px;
 }
 
@@ -88,26 +99,6 @@ nav .nav-links a:hover {
 
 .hero-section .btn-main:hover {
     background-color: #218838;
-}
-
-/* Style pour les icônes des réseaux sociaux */
-.social-icons {
-    margin-top: 30px;
-}
-
-.social-icons a {
-    margin: 0 15px;
-    display: inline-block;
-}
-
-.social-icons img {
-    width: 40px;
-    height: auto;
-    transition: transform 0.3s ease;
-}
-
-.social-icons img:hover {
-    transform: scale(1.2); /* Effet zoom au survol */
 }
 
 /* Section Pourquoi choisir */
