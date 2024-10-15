@@ -1,5 +1,5 @@
-// background.js
-
-chrome.runtime.onInstalled.addListener(() => {
-    console.log("Extension Comment Filter installed");
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message.comments) {
+        chrome.storage.local.set({ comments: message.comments });
+    }
 });

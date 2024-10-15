@@ -1,25 +1,20 @@
-const analyzeComment = async (comment) => {
-    const response = await fetch('http://localhost:5000/analyze', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ comment }),
-    });
-    const data = await response.json();
-    return data.toxicity_score;
-};
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    if (request.action === "fetchComments") {
+        const comments = [];
+        const commentElements = document.querySelectorAll('li.comment-item__container');
+        
+        commentElements.forEach((comment) => {
+            const author = comment.getAttribute('data-actor-display-name');
+            const timeAgo = comment.querySelector('.comment__duration-since')?.innerText.trim();
+            const content = comment.querySelector('.comment__body')?.innerText.trim();
 
-// Intercepter les commentaires (à personnaliser selon les sites)
-document.querySelectorAll('.comment').forEach(commentElement => {
-    const commentText = commentElement.innerText;
-    analyzeComment(commentText).then(toxicityScore => {
-        if (toxicityScore > 0.8) {
-            commentElement.style.display = 'none'; // Masquer le commentaire
-        }
-    });
+            comments.push({
+                author,
+                timeAgo,
+                content
+            });
+        });
+
+        sendResponse({ comments });
+    }
 });
-
-
-// Exécuter la fonction après le chargement de la page
-document.addEventListener('DOMContentLoaded', filterComments);
