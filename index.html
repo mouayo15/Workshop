@@ -84,6 +84,16 @@
             document.getElementById('downloadText').textContent = texts[lang].downloadText;
 			document.getElementById('downloadNowBtn').textContent = texts[lang].downloadNowBtn;
         }
+		function showVideo() {
+			document.getElementById("videoModal").style.display = "block";
+			document.getElementById("video").play();
+		}
+
+		function closeVideo() {
+			document.getElementById("videoModal").style.display = "none";
+		document.getElementById("video").pause();
+			document.getElementById("video").currentTime = 0;
+		}
     </script>
 </head>
 <body onload="changeLanguage('fr')">
@@ -151,7 +161,20 @@
         <div class="container">
             <h2 id="downloadSection">Téléchargez SocialGuard</h2>
             <p id="downloadText">Protégez votre espace social dès maintenant. Téléchargez SocialGuard pour Chrome, Firefox, et bien plus encore.</p>
-            <a href="#download" id="downloadNowBtn" class="btn-main">Télécharger maintenant</a>
+			<!-- Section du bouton de téléchargement -->
+			<a href="#" id="downloadNowBtn" class="btn-main" onclick="showVideo()">Télécharger maintenant</a>
+
+			<!-- Modale pour la vidéo -->
+			<div id="videoModal" class="modal">
+				<div class="modal-content">
+					<span class="close" onclick="closeVideo()">&times;</span>
+					<video id="video" controls>
+						<source src="img/rick_roll.mp4" type="video/mp4">
+						Votre navigateur ne supporte pas la balise vidéo.
+					</video>
+				</div>
+			</div>
+
         </div>
     </section>
 
