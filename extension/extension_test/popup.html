@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beautiful Popup</title>
+    <title>Manage Word List</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="popup" class="popup">
         <div class="popup-content">
-            <span class="close">&times;</span>
-            <h2>Welcome!</h2>
-            <p>This is a beautiful popup message.</p>
-            <button id="action-button">Take Action</button>
+            <h2>Manage Words</h2>
+            <input type="text" id="word-input" placeholder="Enter a word">
+            <button id="add-word-button">Add Word</button>
+            <button id="remove-word-button">Remove Word</button>
+            <h3>Word List:</h3>
+            <ul id="word-list"></ul>
         </div>
     </div>
 
