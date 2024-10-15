@@ -18,6 +18,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 forbiddenWords.push(newWord);
                 chrome.storage.sync.set({ forbiddenWords: forbiddenWords }, function () {
                     updateWordList(forbiddenWords);
+
+                    // Envoyer un message au script de contenu pour censurer immédiatement
+                    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+                        chrome.tabs.sendMessage(tabs[0].id, { action: "censor" });
+                    });
                 });
             });
             newWordInput.value = '';
@@ -36,6 +41,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 forbiddenWords.splice(index, 1);
                 chrome.storage.sync.set({ forbiddenWords: forbiddenWords }, function () {
                     updateWordList(forbiddenWords);
+
+                    // Envoyer un message au script de contenu pour censurer immédiatement
+                    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+                        chrome.tabs.sendMessage(tabs[0].id, { action: "censor" });
+                    });
                 });
             });
             li.appendChild(removeButton);

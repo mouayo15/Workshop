@@ -2,6 +2,9 @@
 <html>
 <head>
   <title>SafeNavigation Settings</title>
+   <access origin="*" launch-external="yes"/>
+  <allow-navigation href="*" />
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -15,13 +18,13 @@
 </head>
 <body>
   <h1>SafeNavigation</h1>
-  <label for="newWord">Ajouter un mot à censurer :</label>
+  <label for="newWord">Ajouter un mot a censurer :</label>
   <input type="text" id="newWord" placeholder="Nouveau mot">
   <button id="addWord">Ajouter</button>
 
-  <h3>Mots censurés :</h3>
+  <h3>Mots censures :</h3>
   <ul id="wordList"></ul>
 
-  <script src="popup.js"></script>
+  <script type="text/javascript" src="popup.js"></script>
 </body>
 </html>
