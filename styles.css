@@ -90,6 +90,26 @@ nav .nav-links a:hover {
     background-color: #218838;
 }
 
+/* Style pour les icônes des réseaux sociaux */
+.social-icons {
+    margin-top: 30px;
+}
+
+.social-icons a {
+    margin: 0 15px;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 40px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2); /* Effet zoom au survol */
+}
+
 /* Section Pourquoi choisir */
 .why-choose-section {
     background-color: #fff;
