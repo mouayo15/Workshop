@@ -24,10 +24,23 @@ chrome.storage.sync.get("forbiddenWords", function(data) {
     // Exécuter le filtrage sur la page courante
     censorPage();
 
+    // Observer les mutations du DOM pour censurer les nouveaux éléments
+    const observer = new MutationObserver(() => {
+        censorPage();
+    });
+
+    // Configuration de l'observateur
+    observer.observe(document.body, { childList: true, subtree: true });
+
     // Écouter les messages du popup
     chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         if (request.action === "censor") {
             censorPage(); // Censurer immédiatement lorsque le message est reçu
         }
+    });
+
+    // Écouter les événements de redimensionnement de la fenêtre
+    window.addEventListener('resize', () => {
+        censorPage(); // Censurer à nouveau lors du redimensionnement
     });
 });

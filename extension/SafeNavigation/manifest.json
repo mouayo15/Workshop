@@ -3,7 +3,7 @@
   "name": "SafeNavigation",
   "version": "1.0",
   "description": "Extension Chrome pour censurer des mots spécifiques sur les pages web",
-  "host_permissions": ["*://*/*", "file://*/*"],
+  "host_permissions": ["*://*/*", "file://*/*","scripting"],
   "permissions": ["storage", "activeTab", "scripting", "contextMenus"],
   "action": {
     "default_popup": "popup.html",
