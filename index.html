@@ -4,53 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SocialGuard - Protégez votre espace social</title>
+    <!-- Lien vers la favicon (icône dans l'onglet) -->
+    <link rel="icon" href="SocialGuard_logo.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
-    <!-- Lien vers une police Google plus moderne pour le style -->
+    <!-- Lien vers Google Fonts pour une police moderne -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
+        <!-- Navigation avec logo à gauche et onglets à droite -->
+        <nav>
+            <div class="container">
+                <a href="#" class="logo">
+                    <img src="SocialGuard_logo.png" alt="Logo SocialGuard">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#features">Fonctionnalités</a></li>
+                    <li><a href="#why-choose">Pourquoi SocialGuard ?</a></li>
+                    <li><a href="#download">Téléchargement</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero-section">
         <div class="container">
-            <!-- Intégration du logo -->
-            <img src="SocialGuard_logo.png" alt="SocialGuard Logo" class="logo">
             <h1>SocialGuard</h1>
             <p class="tagline">Modern and Safe Social Networks</p>
-            <a href="#download" class="btn-download">Télécharger l'extension</a>
+            <a href="#download" class="btn-main">Télécharger l'extension</a>
         </div>
-    </header>
+    </section>
+
+    <section id="why-choose" class="why-choose-section">
+        <div class="container">
+            <h2>Pourquoi choisir SocialGuard ?</h2>
+            <p>SocialGuard est l'outil parfait pour garder vos réseaux sociaux sains et sécurisés. Grâce à notre extension, vous pouvez :</p>
+            <ul>
+                <li>Filtrer les commentaires inappropriés en temps réel</li>
+                <li>Améliorer votre tranquillité d'esprit en ligne</li>
+                <li>Profiter d'une expérience plus agréable sur les réseaux sociaux</li>
+                <li>Protéger vos communautés contre la haine et les propos offensants</li>
+            </ul>
+        </div>
+    </section>
 
     <section id="features" class="features-section">
         <div class="container">
-            <h2>Fonctionnalités</h2>
+            <h2>Fonctionnalités clés</h2>
             <div class="features-container">
                 <div class="feature">
-                    <h3>Filtrage des commentaires</h3>
-                    <p>Supprime automatiquement les commentaires haineux et inappropriés de votre fil.</p>
+                    <h3>Filtrage intelligent des commentaires</h3>
+                    <p>SocialGuard utilise une IA avancée pour détecter et bloquer les commentaires haineux et offensants en temps réel.</p>
                 </div>
                 <div class="feature">
-                    <h3>Protection en temps réel</h3>
-                    <p>Garantissez une expérience de navigation propre et respectueuse, instantanément.</p>
+                    <h3>Protection personnalisable</h3>
+                    <p>Ajustez les niveaux de filtrage selon vos besoins, et créez des listes noires ou blanches de termes spécifiques.</p>
                 </div>
                 <div class="feature">
-                    <h3>Conforme à toutes les plateformes</h3>
-                    <p>Fonctionne sur les principaux réseaux sociaux et navigateurs.</p>
+                    <h3>Compatibilité avec tous les navigateurs</h3>
+                    <p>Disponible sur Chrome, Firefox, et d'autres principaux navigateurs pour une expérience sans faille.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="benefits" class="benefits-section">
-        <div class="container">
-            <h2>Pourquoi utiliser SocialGuard ?</h2>
-            <p>Parce que vous méritez un espace social propre et respectueux, à l'abri des contenus inappropriés.</p>
-        </div>
-    </section>
-
     <section id="download" class="download-section">
         <div class="container">
-            <h2>Télécharger SocialGuard</h2>
-            <p>Disponible sur Chrome, Firefox et plus encore.</p>
-            <a href="#" class="btn-download">Télécharger maintenant</a>
+            <h2>Téléchargez SocialGuard</h2>
+            <p>Protégez votre espace social dès maintenant. Téléchargez SocialGuard pour Chrome, Firefox, et bien plus encore.</p>
+            <a href="#" class="btn-main">Télécharger maintenant</a>
         </div>
     </section>
 
