@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "Extension test",
+  "name": "Extension Test",
   "version": "1.0",
   "description": "Censure des mots spécifiques sur les pages web",
-  "permissions": ["activeTab", "scripting"],
+  "permissions": ["activeTab", "scripting","tabs"],
   "host_permissions": ["<all_urls>"],
   "content_scripts": [
     {
@@ -12,12 +12,14 @@
       "run_at": "document_end"
     }
   ],
-
-  "content_security_policy": {
-  "extension_pages": "script-src 'self'; object-src 'self'"
-},
-
   "background": {
     "service_worker": "background.js"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+
+  "action": {
+    "default_icon": "icon.png"
   }
-}
+  }
