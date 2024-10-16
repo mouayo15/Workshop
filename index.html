@@ -27,7 +27,7 @@
                     feature4: "Protéger vos communautés contre la haine et les propos offensants",
                     functionalities: "Fonctionnalités clés",
                     featureTitle1: "Filtrage intelligent des commentaires",
-                    featureDesc1: "SocialGuard utilise un algorithme avancée pour détecter et bloquer les commentaires haineux et offensants en temps réel.",
+                    featureDesc1: "SocialGuard utilise une IA avancée pour détecter et bloquer les commentaires haineux et offensants en temps réel.",
                     featureTitle2: "Protection personnalisable",
                     featureDesc2: "Ajustez les niveaux de filtrage selon vos besoins, et créez des listes noires ou blanches de termes spécifiques.",
                     featureTitle3: "Compatibilité avec tous les navigateurs",
@@ -51,7 +51,7 @@
                     feature4: "Protect your communities from hate and offensive remarks",
                     functionalities: "Key Features",
                     featureTitle1: "Intelligent comment filtering",
-                    featureDesc1: "SocialGuard uses advanced algorithm to detect and block hateful and offensive comments in real-time.",
+                    featureDesc1: "SocialGuard uses advanced AI to detect and block hateful and offensive comments in real-time.",
                     featureTitle2: "Customizable protection",
                     featureDesc2: "Adjust the filtering levels according to your needs, and create blacklists or whitelists of specific terms.",
                     featureTitle3: "Compatibility with all browsers",
@@ -83,17 +83,6 @@
             document.getElementById('downloadSection').textContent = texts[lang].downloadSection;
             document.getElementById('downloadText').textContent = texts[lang].downloadText;
 			document.getElementById('downloadNowBtn').textContent = texts[lang].downloadNowBtn;
-        }
-		function showVideo() {
-			document.getElementById("videoModal").style.display = "block";
-			document.getElementById("video").play();
-		}
-
-		function closeVideo() {
-			document.getElementById("videoModal").style.display = "none";
-		document.getElementById("video").pause();
-			document.getElementById("video").currentTime = 0;
-		}
     </script>
 </head>
 <body onload="changeLanguage('fr')">
@@ -120,7 +109,8 @@
         <div class="container">
             <h1 id="title">SocialGuard</h1>
             <p id="tagline" class="tagline">Modern and Safe Social Networks</p>
-            <a href="#download" id="downloadBtn" class="btn-main">Télécharger l'extension</a>
+            <a href="https://github.com/username/repository/archive/refs/heads/main.zip" id="downloadNowBtn" class="btn-main" download>Télécharger l'extension</a>
+
         </div>
     </section>
 
@@ -161,19 +151,7 @@
         <div class="container">
             <h2 id="downloadSection">Téléchargez SocialGuard</h2>
             <p id="downloadText">Protégez votre espace social dès maintenant. Téléchargez SocialGuard pour Chrome, Firefox, et bien plus encore.</p>
-			<!-- Section du bouton de téléchargement -->
-			<a href="#" id="downloadNowBtn" class="btn-main" onclick="showVideo()">Télécharger maintenant</a>
-
-			<!-- Modale pour la vidéo -->
-			<div id="videoModal" class="modal">
-				<div class="modal-content">
-					<span class="close" onclick="closeVideo()">&times;</span>
-					<video id="video" controls>
-						<source src="img/rick_roll.mp4" type="video/mp4">
-						Votre navigateur ne supporte pas la balise vidéo.
-					</video>
-				</div>
-			</div>
+			<a href="https://github.com/username/repository/archive/refs/heads/main.zip" id="downloadNowBtn" class="btn-main" download>Télécharger maintenant</a>
 
         </div>
     </section>
