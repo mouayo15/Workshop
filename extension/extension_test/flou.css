@@ -1,5 +1,0 @@
-/* CSS pour flouter la page */
-.blur {
-    filter: blur(5px); /* Ajustez la valeur pour augmenter ou diminuer le flou */
-    pointer-events: none; /* Désactiver les interactions sur les éléments floutés */
-}

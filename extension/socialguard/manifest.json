@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Extension Test",
+  "name": "SocialGuard",
   "version": "1.0",
   "description": "Censure des mots spécifiques sur les pages web",
   "permissions": ["storage","activeTab", "scripting","tabs"],
@@ -16,10 +16,17 @@
     "service_worker": "background.js"
   },
   "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self'"
+    "extension_pages": "script-src 'self';'script-src-elem'; object-src 'self'"
+  },
+
+"icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
   },
 
   "action": {
-    "default_icon": "icon.png"
+     
   }
   }

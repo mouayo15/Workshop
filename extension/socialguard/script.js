@@ -7,18 +7,71 @@ document.addEventListener("DOMContentLoaded", function() {
     const passwordInput = document.getElementById("password"); // Password input field
     const unlockButton = document.getElementById("unlock-button"); // Unlock button
     const correctPassword = "admin"; // Replace with your desired password
+    const csvFilePath = "dataset_mots_vulgaires.csv";
+    //charger la liste des mots à partir de dataset csv
 
-    // Charger la liste de mots à partir du stockage local
+    function klawiloadWordsFromCSV() {
+        fetch(chrome.runtime.getURL(csvFilePath))
+            .then(response => response.text())
+            .then(text => {
+                const words = text.split('\n').map(line => line.split(';')[0].trim());
+                chrome.storage.local.set({ words: words }, function() {
+                    updateWordList(words);
+                });
+            })
+            .catch(error => console.error("Erreur lors du chargement du fichier CSV:", error));
+    }
+
+
+    function loadWordsFromCSV() {
+        fetch(chrome.runtime.getURL(csvFilePath))
+            .then(response => response.text())
+            .then(text => {
+                const newWords = text.split('\n').map(line => line.split(';')[0].trim());
+    
+                // Get the existing words from storage
+                chrome.storage.local.get(["words"], function(result) {
+                    const existingWords = result.words || [];
+    
+                    // Filter out any duplicates (words already present in storage)
+                    const wordsToAdd = newWords.filter(word => !existingWords.includes(word));
+    
+                    // Combine the old and new words
+                    const updatedWords = [...existingWords, ...wordsToAdd];
+    
+                    // Store the updated list back into storage
+                    chrome.storage.local.set({ words: updatedWords }, function() {
+                        updateWordList(updatedWords); // Update the displayed word list
+                    });
+                });
+            })
+            .catch(error => console.error("Erreur lors du chargement du fichier CSV:", error));
+    }
+    
+
+    // Charger la liste de mots à partir du stockage local (ou depuis le CSV s'il n'y a pas de données)
     chrome.storage.local.get(["words"], function(result) {
-        const words = result.words || [];
-        updateWordList(words);
+        if (result.words && result.words.length > 0) {
+            updateWordList(result.words);
+        } else {
+            loadWordsFromCSV();
+        }
     });
+
+
+
+
+
+
+
+ 
 
     // Déverrouiller la gestion des mots
     unlockButton.addEventListener("click", function() {
         const passwordValue = passwordInput.value.trim();
         if (passwordValue === correctPassword) {
             document.getElementById("word-management").style.display = "block"; // Show word management section
+            loadWordsFromCSV()
             alert("Accès autorisé!"); // Access granted message
         } else {
             alert("Mot de passe incorrect!"); // Incorrect password message
