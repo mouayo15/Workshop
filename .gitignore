@@ -2,7 +2,5 @@
 .idea/
 *.iml
 
-# Ignore specific data files
-
-./doc_perspective.html
-./Filtrage_coté_client_java_script.txt
+doc_perspective.html
+Filtrage_coté_client_java_script.txt
