@@ -44,6 +44,18 @@ document.getElementById('retrieveComments').addEventListener('click', async () =
             // Analyze toxicity for each comment and store results
             const toxicityScores = await Promise.all(comments.map(comment => analyzeText(comment)));
 
+            // Calculate the average toxicity score
+            const validScores = toxicityScores.filter(score => score !== undefined);
+            const averageToxicity = validScores.length > 0 
+                ? (validScores.reduce((sum, score) => sum + score, 0) / validScores.length).toFixed(2) 
+                : 0;
+
+            // Display the average toxicity
+            const averageElement = document.createElement('div');
+            averageElement.className = 'average-toxicity';
+            averageElement.textContent = `Toxicité moyenne : ${(averageToxicity * 100).toFixed(2)}%`;
+            commentsContainer.appendChild(averageElement);
+
             // Create comment elements with progress bars
             comments.forEach((comment, index) => {
                 const score = toxicityScores[index];
@@ -70,8 +82,6 @@ document.getElementById('retrieveComments').addEventListener('click', async () =
         });
     });
 });
-
-
 
 function retrieveComments() {
     // Select all elements that contain the comments
