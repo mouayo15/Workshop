@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "SocialGuard Scanner",
   "version": "1.0",
-  "description": "Scan comments toxicity from an instagram post.",
+  "description": "Scannez le niveau de toxicité des commentaires à partir d’une publication Instagram.",
   "permissions": [
       "activeTab",
       "scripting"
